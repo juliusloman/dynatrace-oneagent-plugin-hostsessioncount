@@ -1,0 +1,59 @@
+{
+    "name": "custom.python.hostsessioncount_plugin",
+    "version": "0.1",
+    "type": "python",
+    "entity": "HOST",
+    "metricGroup": "sessions",
+    "processTypeNames": [ "WINDOWS_SYSTEM", "LINUX_SYSTEM" ],
+    "source": {
+        "package": "hostsessioncount_plugin",
+        "className": "hostSessionCountPlugin",
+        "install_requires": [ ],
+        "activation": "Singleton"
+    },
+    "metrics": [
+        {
+            "timeseries": {
+                "key": "sessionCount",
+                "unit": "Count",
+                "displayname": "Sessions"
+            }
+        }
+    ],
+	"ui": {
+		"keycharts": [
+            {
+                "group": "Sessions",
+                "title": "User session count",
+                "description": "Sessions to host",
+                "series": [
+                    {
+                        "key": "sessionCount",
+                        "displayname": "Number of sessions",
+                        "aggregation": "max",
+                        "seriestype": "bar",
+                        "stacked": false,
+                        "color": "#e31a1c"
+                    }      
+                ]
+            }
+        ],
+        "charts": [
+            {
+                "group": "Sessions",
+                "title": "User session count",
+                "description": "Sessions to host",
+                "series": [
+                    {
+                        "key": "sessionCount",
+                        "displayname": "Number of sessions",
+                        "aggregation": "max",
+                        "seriestype": "bar",
+                        "stacked": false,
+                        "color": "#e31a1c"
+                    }      
+                ]
+            }
+        ]
+    }
+}
